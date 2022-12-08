@@ -78,5 +78,6 @@ export const StepActions = styled("div")`
     padding-left: 12%;
     padding-right: 12%;
     padding-block: 2rem;
+    margin-block: 2rem;
     background-color: hsl(0, 0%, 100%);
 `;

@@ -43,8 +43,9 @@ function App() {
         })
     );
 
-    function previousStep() {
+    function previousStep(event) {
         setFormStep((prevState) => prevState - 1);
+        
     }
 
     function nextStep() {

@@ -6,8 +6,8 @@ export const FormItem = styled("div")`
 
     @media screen and (max-width: 625px) {
         margin: unset;
-        margin-top: -15%;
-        margin-bottom: 2rem;
+        margin-top: -16%;
+        margin-bottom: 5%;
         padding: 1rem 2rem;
         border-radius: 0.5rem;
         background-color: hsl(0, 0%, 100%);

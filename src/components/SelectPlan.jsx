@@ -2,12 +2,17 @@ import {
     FormItem,
     FormTitle,
     ItemWrapper,
-    Radio,
-    RadioLabel,
-    RadioSub,
-    RadioTitle,
+    LabelTitle,
     SubTitle,
     Title,
+    SwitchWrapper,
+    SwitchLabel,
+    Switch,
+    SwitchToggle,
+    RadioLabel,
+    RadioCustom,
+    RadioImg,
+    Radio,
 } from "../style";
 import arcadeImg from "../assets/images/icon-arcade.svg";
 import advancedImg from "../assets/images/icon-advanced.svg";
@@ -15,8 +20,6 @@ import proImg from "../assets/images/icon-pro.svg";
 import { useState } from "react";
 
 export function SelectPlan({ formData }) {
-    const [isMonthly, setIsMonthly] = useState(false);
-
     const options = [
         {
             title: "Arcade",
@@ -53,29 +56,47 @@ export function SelectPlan({ formData }) {
         },
     ];
 
+    const [isYearly, setIsYearly] = useState(false);
+
+    const [plan, setPlan] = useState("Arcade");
+
+    function handlePlanSwitch(event) {
+        setIsYearly(event.target.checked);
+    }
+
+    function handlePlanChange(event) {
+        setPlan(event.target.value);
+    }
+
     const radioLabels = options.map((option, idx) => {
         return (
             <RadioLabel key={idx}>
-                <Radio type="radio" name={option.title} value={option.title} />
-                <img
-                    width="48"
-                    height="48"
-                    src={option.image}
-                    alt="radio option icon"
+                <Radio
+                    type="radio"
+                    value={option.title}
+                    checked={option.title === plan}
+                    onChange={handlePlanChange}
                 />
-                <div>
-                    <RadioTitle>{option.title}</RadioTitle>
-                    {isMonthly ? (
-                        <RadioSub>{option.month.price}</RadioSub>
-                    ) : (
-                        <RadioSub>{option.year.price}</RadioSub>
-                    )}
-                    {isMonthly ? null : (
-                        <RadioTitle size="0.8rem">
-                            {option.year.highlight}
-                        </RadioTitle>
-                    )}
-                </div>
+                <RadioCustom>
+                    <RadioImg src={option.image} alt={option.title} />
+                    <div>
+                        <LabelTitle focus>{option.title}</LabelTitle>
+                        {isYearly ? (
+                            <LabelTitle size="1rem">
+                                {option.year.price}
+                            </LabelTitle>
+                        ) : (
+                            <LabelTitle size="1rem">
+                                {option.month.price}
+                            </LabelTitle>
+                        )}
+                        {isYearly ? (
+                            <LabelTitle size="1rem" focus>
+                                {option.year.highlight}
+                            </LabelTitle>
+                        ) : null}
+                    </div>
+                </RadioCustom>
             </RadioLabel>
         );
     });
@@ -84,14 +105,28 @@ export function SelectPlan({ formData }) {
         <FormItem>
             <FormTitle>
                 <Title>Select your plan</Title>
-
                 <SubTitle>
                     You have the option to monthly or yearly billing.
                 </SubTitle>
             </FormTitle>
-
             <form>
                 <ItemWrapper>{radioLabels}</ItemWrapper>
+                <SwitchWrapper>
+                    <LabelTitle size="1.2rem" focus={!isYearly}>
+                        Monthly
+                    </LabelTitle>
+                    <SwitchLabel>
+                        <Switch
+                            type="checkbox"
+                            checked={isYearly}
+                            onChange={handlePlanSwitch}
+                        />
+                        <SwitchToggle />
+                    </SwitchLabel>
+                    <LabelTitle size="1.2rem" focus={isYearly}>
+                        Yearly
+                    </LabelTitle>
+                </SwitchWrapper>
             </form>
         </FormItem>
     );
