@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const FormItem = styled("div")`
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 4%;
+    padding-right: 4%;
 
     @media screen and (max-width: 625px) {
         margin: unset;
-        margin-top: -16%;
+        margin-top: -12%;
         margin-bottom: 5%;
         padding: 1rem 2rem;
         border-radius: 0.5rem;

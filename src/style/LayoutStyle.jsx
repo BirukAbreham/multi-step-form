@@ -3,8 +3,7 @@ import mbImgSidebar from "../assets/images/bg-sidebar-mobile.svg";
 import dkImgSidebar from "../assets/images/bg-sidebar-desktop.svg";
 
 export const Wrapper = styled("div")`
-    padding: 5% 10%;
-    min-height: 100vh;
+    padding: 4% 8%;
     background: hsl(217, 100%, 97%);
 
     @media screen and (max-width: 625px) {
@@ -77,7 +76,6 @@ export const StepActions = styled("div")`
 
     padding-left: 12%;
     padding-right: 12%;
-    padding-block: 2rem;
-    margin-block: 2rem;
+    padding-block: 1rem;
     background-color: hsl(0, 0%, 100%);
 `;
