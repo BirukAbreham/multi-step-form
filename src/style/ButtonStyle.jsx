@@ -65,6 +65,11 @@ export const ButtonLink = styled("button")`
     font-size: ${(props) => (props.size ? props.size : "1.3rem")};
     color: ${(props) => (props.color ? props.color : "hsl(231, 11%, 63%)")};
 
+    &:hover {
+        color: hsl(243, 100%, 62%);
+        border-bottom: 2px solid hsl(243, 100%, 62%);
+    }
+
     @media screen and (max-width: 625px) {
         font-size: ${(props) => (props.sm_size ? props.sm_size : "0.9rem")};
     }

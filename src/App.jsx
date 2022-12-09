@@ -304,7 +304,8 @@ function App() {
                         <StepItem key={item.step}>
                             <StepCircle
                                 isActive={
-                                    item.step === 5 || item.step === formStep
+                                    (formStep === 5 && item.step === 4) ||
+                                    item.step === formStep
                                 }
                             >
                                 {item.step}

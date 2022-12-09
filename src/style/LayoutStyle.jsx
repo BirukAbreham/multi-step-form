@@ -9,7 +9,7 @@ export const Wrapper = styled("div")`
 
     @media screen and (max-width: 625px) {
         padding: unset;
-        min-height: auto;
+        min-height: 100vh;
     }
 `;
 
