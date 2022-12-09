@@ -52,3 +52,20 @@ export const Button = styled("button")`
         margin-left: ${(props) => (props.toRight ? "65%" : 0)};
     }
 `;
+
+export const ButtonLink = styled("button")`
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    background-color: transparent;
+    border-bottom: 2px solid hsl(231, 11%, 63%);
+    font-weight: ${(props) => (props.weight ? props.weight : "700")};
+    font-size: ${(props) => (props.size ? props.size : "1.3rem")};
+    color: ${(props) => (props.color ? props.color : "hsl(231, 11%, 63%)")};
+
+    @media screen and (max-width: 625px) {
+        font-size: ${(props) => (props.sm_size ? props.sm_size : "0.9rem")};
+    }
+`;

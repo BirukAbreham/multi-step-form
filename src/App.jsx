@@ -34,10 +34,13 @@ function App() {
         isYearlyPlan: false,
         plan: {
             title: "Arcade",
+            image: arcadeImg,
             month: {
+                value: 9,
                 price: "$9/mo",
             },
             year: {
+                value: 90,
                 price: "$90/yr",
                 highlight: "2 months free",
             },
@@ -58,9 +61,11 @@ function App() {
             title: "Arcade",
             image: arcadeImg,
             month: {
+                value: 9,
                 price: "$9/mo",
             },
             year: {
+                value: 90,
                 price: "$90/yr",
                 highlight: "2 months free",
             },
@@ -69,9 +74,11 @@ function App() {
             title: "Advanced",
             image: advancedImg,
             month: {
+                value: 12,
                 price: "$12/mo",
             },
             year: {
+                value: 120,
                 price: "$120/yr",
                 highlight: "2 months free",
             },
@@ -80,9 +87,11 @@ function App() {
             title: "Pro",
             image: proImg,
             month: {
+                value: 15,
                 price: "$15/mo",
             },
             year: {
+                value: 150,
                 price: "$150/yr",
                 highlight: "2 months free",
             },
@@ -94,9 +103,11 @@ function App() {
             title: "Online service",
             sub: "Access to multiplayer games",
             monthly: {
+                value: 1,
                 price: "+$1/mo",
             },
             yearly: {
+                value: 10,
                 price: "+$10/yr",
             },
             selected: false,
@@ -105,9 +116,11 @@ function App() {
             title: "Larger storage",
             sub: "Extra 1TB of cloud save",
             monthly: {
+                value: 2,
                 price: "+$2/mo",
             },
             yearly: {
+                value: 20,
                 price: "+$20/yr",
             },
             selected: false,
@@ -116,9 +129,11 @@ function App() {
             title: "Customizable profile",
             sub: "Custom theme on your profile",
             monthly: {
+                value: 2,
                 price: "+$2/mo",
             },
             yearly: {
+                value: 20,
                 price: "+$20/yr",
             },
             selected: false,
@@ -236,6 +251,10 @@ function App() {
         }
     }
 
+    function jumpTo(value) {
+        setFormStep(value);
+    }
+
     let step = null;
     switch (formStep) {
         case 1:
@@ -268,7 +287,7 @@ function App() {
             );
             break;
         case 4:
-            step = <Summary formData={formData} />;
+            step = <Summary formData={formData} jumpTo={jumpTo} />;
             break;
         case 5:
             step = <ThankYou />;

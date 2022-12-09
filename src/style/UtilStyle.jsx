@@ -34,3 +34,14 @@ export const SubTitle = styled("p")`
     margin-block: 0.8rem;
     color: hsl(231, 11%, 63%);
 `;
+
+export const P = styled("p")`
+    margin-block: 0.5rem;
+    font-weight: ${(props) => (props.weight ? props.weight : "700")};
+    font-size: ${(props) => (props.size ? props.size : "1.3rem")};
+    color: ${(props) => (props.color ? props.color : "hsl(231, 11%, 63%)")};
+
+    @media screen and (max-width: 625px) {
+        font-size: ${(props) => (props.sm_size ? props.sm_size : "0.9rem")};
+    }
+`;
