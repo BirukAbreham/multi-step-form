@@ -4,10 +4,12 @@ import dkImgSidebar from "../assets/images/bg-sidebar-desktop.svg";
 
 export const Wrapper = styled("div")`
     padding: 4% 8%;
+    min-height: 100vh;
     background: hsl(217, 100%, 97%);
 
     @media screen and (max-width: 625px) {
         padding: unset;
+        min-height: auto;
     }
 `;
 

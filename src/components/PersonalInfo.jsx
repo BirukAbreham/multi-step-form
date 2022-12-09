@@ -1,6 +1,19 @@
-import { FormItem, FormTitle, Input, InputWrapper, Label, SubTitle, Title } from "../style";
+import {
+    FormItem,
+    FormTitle,
+    Input,
+    InputWrapper,
+    Label,
+    SubTitle,
+    Title,
+} from "../style";
 
-export function PersonalInfo({ formData }) {
+export function PersonalInfo({
+    formData,
+    onChangeName,
+    onChangeEmail,
+    onChangePhone,
+}) {
     return (
         <FormItem>
             <FormTitle>
@@ -19,6 +32,8 @@ export function PersonalInfo({ formData }) {
                         id="name"
                         name="name"
                         placeholder="e.g. Stephen King"
+                        value={formData.name}
+                        onChange={onChangeName}
                     />
                 </InputWrapper>
                 <InputWrapper>
@@ -28,6 +43,8 @@ export function PersonalInfo({ formData }) {
                         id="email"
                         name="email"
                         placeholder="e.g. stephenking@lorem.com"
+                        value={formData.email}
+                        onChange={onChangeEmail}
                     />
                 </InputWrapper>
                 <InputWrapper>
@@ -37,6 +54,8 @@ export function PersonalInfo({ formData }) {
                         id="phone"
                         name="phone"
                         placeholder="e.g. +1 234 567 890"
+                        value={formData.phone}
+                        onChange={onChangePhone}
                     />
                 </InputWrapper>
             </form>

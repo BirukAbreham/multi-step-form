@@ -17,9 +17,15 @@ export const Label = styled("label")`
 
 export const Input = styled("input")`
     width: 100%;
+    outline: none;
     border-radius: 0.5rem;
     padding: 0.8rem 1.3rem;
-    border: 2px solid hsl(229, 24%, 87%);
+    border: 1px solid hsl(229, 24%, 87%);
+
+    &:focus,
+    &:hover {
+        border: 1px solid hsl(243, 100%, 62%);
+    }
 `;
 
 export const LabelTitle = styled("h4")`
@@ -64,7 +70,7 @@ export const RadioCustom = styled("div")`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border: 2px solid hsl(231, 11%, 63%);
+    border: 1px solid hsl(231, 11%, 63%);
 
     @media screen and (max-width: 625px) {
         gap: 2rem;
@@ -87,7 +93,7 @@ export const RadioLabel = styled("label")`
 
     ${Radio}:checked + ${RadioCustom} {
         background-color: hsl(217, 100%, 97%);
-        border: 2px solid hsl(243, 100%, 62%);
+        border: 1px solid hsl(243, 100%, 62%);
     }
 
     @media screen and (max-width: 625px) {
@@ -185,7 +191,14 @@ export const CheckboxIcon = styled("div")`
     height: 30px;
     width: 30px;
     border-radius: 0.25rem;
-    border: 1px solid hsl(229, 24%, 87%);
+    border: ${(props) =>
+        props.selected
+            ? "1px solid hsl(243, 100%, 62%)"
+            : "1px solid hsl(229, 24%, 87%)"};
+    background: ${(props) =>
+        props.selected
+            ? `url(${checkMarkImg}) center 50% no-repeat hsl(243, 100%, 62%)`
+            : "transparent"};
 
     @media screen and (max-width: 625px) {
         width: 20px;
@@ -222,13 +235,5 @@ export const CheckboxLabel = styled("label")`
     ${Checkbox}:checked + ${CheckboxCustom} {
         background-color: hsl(217, 100%, 97%);
         border: 1px solid hsl(243, 100%, 62%);
-    }
-
-    ${Checkbox}:checked + ${CheckboxIcon} {
-        /* border: none;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url(${checkMarkImg}); */
-        background-color: hsl(243, 100%, 62%);
     }
 `;
