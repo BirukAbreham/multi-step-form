@@ -45,6 +45,7 @@ export function PersonalInfo({
                         ) : null}
                     </LabelWrapper>
                     <Input
+                        autoFocus
                         type="text"
                         id="name"
                         name="name"

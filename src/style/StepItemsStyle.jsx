@@ -28,7 +28,7 @@ export const StepVerbose = styled("div")`
     color: hsl(0, 0%, 100%);
     text-transform: uppercase;
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         display: none;
     }
 `;

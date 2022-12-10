@@ -8,7 +8,7 @@ export const Button = styled("button")`
     border-radius: 0.4rem;
     padding: 0.8rem 1.4rem;
 
-    margin-left: ${(props) => (props.toRight ? "80%" : 0)};
+    margin-left: ${(props) => (props.toRight ? "81.6%" : 0)};
     font-size: ${(props) => (props.fSize ? props.fSize : "1.2rem")};
 
     color: ${(props) => {
@@ -46,10 +46,10 @@ export const Button = styled("button")`
         }};
     }
 
-    @media screen and (max-width: 625px) {
-        font-size: 1rem;
+    @media screen and (max-width: 768px) {
+        font-size: 0.9rem;
         padding: 0.6rem 1rem;
-        margin-left: ${(props) => (props.toRight ? "65%" : 0)};
+        margin-left: ${(props) => (props.toRight ? "70%" : 0)};
     }
 `;
 
@@ -70,7 +70,7 @@ export const ButtonLink = styled("button")`
         border-bottom: 2px solid hsl(243, 100%, 62%);
     }
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         font-size: ${(props) => (props.sm_size ? props.sm_size : "0.9rem")};
     }
 `;

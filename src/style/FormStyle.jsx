@@ -23,7 +23,7 @@ export const Label = styled("label")`
     font-size: 1.2rem;
     color: hsl(213, 96%, 18%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         font-size: 1rem;
     }
 `;
@@ -51,7 +51,7 @@ export const LabelTitle = styled("h4")`
     color: ${(props) =>
         props.focus ? "hsl(213, 96%, 18%)" : "hsl(231, 11%, 63%)"};
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         font-size: ${(props) => (props.focus ? "1rem" : "0.8rem")};
     }
 `;
@@ -62,7 +62,7 @@ export const ItemWrapper = styled("div")`
     align-items: center;
     justify-content: space-between;
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         gap: 1.2rem;
         flex-direction: column;
         align-items: flex-start;
@@ -81,14 +81,14 @@ export const RadioCustom = styled("div")`
     padding: 2rem;
     display: flex;
     gap: 4rem;
-    width: 220px;
+    width: 200px;
     border-radius: 0.8rem;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     border: 1px solid hsl(231, 11%, 63%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         gap: 2rem;
         padding: 0.6rem;
         width: 100%;
@@ -112,7 +112,7 @@ export const RadioLabel = styled("label")`
         border: 1px solid hsl(243, 100%, 62%);
     }
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         width: 100%;
     }
 `;
@@ -197,7 +197,7 @@ export const CheckboxCustom = styled("div")`
     border-radius: 0.8rem;
     border: 1px solid hsl(231, 11%, 63%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         gap: 1rem;
         padding: 0.6rem 1rem;
     }
@@ -216,7 +216,7 @@ export const CheckboxIcon = styled("div")`
             ? `url(${checkMarkImg}) center 50% no-repeat hsl(243, 100%, 62%)`
             : "transparent"};
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         width: 20px;
         height: 20px;
     }
@@ -229,7 +229,7 @@ export const CheckboxHead = styled("div")`
     align-items: center;
     justify-content: space-between;
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         flex-basis: 92%;
     }
 `;

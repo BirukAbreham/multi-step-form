@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
     Button,
     FormContainer,
@@ -51,6 +51,10 @@ function App() {
         },
         addOns: [],
     });
+
+    const nextBtnRef = useRef();
+
+    const prevBtnRef = useRef();
 
     const steps = ["your info", "select plan", "adds-ons", "summary"].map(
         (val, idx) => ({
@@ -146,6 +150,7 @@ function App() {
 
     function previousStep(event) {
         setFormStep((prevState) => prevState - 1);
+        prevBtnRef.current.blur();
     }
 
     function nextStep() {
@@ -205,6 +210,8 @@ function App() {
         } else {
             setFormStep((prevState) => prevState + 1);
         }
+
+        nextBtnRef.current.blur();
     }
 
     function confirm() {
@@ -381,12 +388,17 @@ function App() {
                     {formStep < 5 ? (
                         <StepActions>
                             {formStep > 1 && formStep <= 4 ? (
-                                <Button type="neutral" onClick={previousStep}>
+                                <Button
+                                    ref={prevBtnRef}
+                                    type="neutral"
+                                    onClick={previousStep}
+                                >
                                     Go Back
                                 </Button>
                             ) : null}
                             {formStep < 4 ? (
                                 <Button
+                                    ref={nextBtnRef}
                                     fSize="1rem"
                                     type="primary"
                                     toRight={formStep === 1}

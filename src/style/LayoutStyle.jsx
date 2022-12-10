@@ -3,11 +3,11 @@ import mbImgSidebar from "../assets/images/bg-sidebar-mobile.svg";
 import dkImgSidebar from "../assets/images/bg-sidebar-desktop.svg";
 
 export const Wrapper = styled("div")`
-    padding: 6% 12%;
+    padding: 4% 8%;
     min-height: 100vh;
     background: hsl(217, 100%, 97%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         padding: unset;
         min-height: 100vh;
     }
@@ -20,7 +20,7 @@ export const FormContainer = styled("section")`
     border-radius: 12px;
     background-color: hsl(0, 0%, 100%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         padding: unset;
         border-radius: 0;
         grid-template-columns: auto;
@@ -44,7 +44,7 @@ export const StepNumbers = styled("aside")`
     align-items: flex-start;
     justify-content: flex-start;
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         gap: 5px;
         padding: 2.5rem;
         flex-direction: row;
@@ -62,7 +62,7 @@ export const StepForm = styled("div")`
     padding: 3.5rem;
     background-color: hsl(0, 0%, 100%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         padding: unset;
         margin-left: 3%;
         margin-right: 3%;

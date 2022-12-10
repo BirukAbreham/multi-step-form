@@ -4,9 +4,9 @@ export const FormItem = styled("div")`
     padding-left: 4%;
     padding-right: 4%;
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         margin: unset;
-        margin-top: -12%;
+        margin-top: -8%;
         margin-bottom: 5%;
         padding: 1rem 2rem;
         border-radius: 0.5rem;
@@ -24,7 +24,7 @@ export const Title = styled("h1")`
     margin-block: 1rem;
     color: hsl(213, 96%, 18%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         font-size: 1.6rem;
     }
 `;
@@ -34,7 +34,7 @@ export const SubTitle = styled("p")`
     margin-block: 0.8rem;
     color: hsl(231, 11%, 63%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         font-size: 1.1rem;
     }
 `;
@@ -47,7 +47,7 @@ export const P = styled("p")`
     font-size: ${(props) => (props.size ? props.size : "1.3rem")};
     color: ${(props) => (props.color ? props.color : "hsl(231, 11%, 63%)")};
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         line-height: ${(props) => (props.sm_lh ? props.sm_lh : "1.4rem")};
         font-size: ${(props) => (props.sm_size ? props.sm_size : "0.9rem")};
     }
@@ -57,7 +57,7 @@ export const Img = styled("img")`
     width: ${(props) => (props.width ? props.width : "60px")};
     height: ${(props) => (props.height ? props.height : "60px")};
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         width: ${(props) => (props.width_sm ? props.width_sm : "60px")};
         height: ${(props) => (props.height_sm ? props.height_sm : "60px")};
     }
@@ -70,7 +70,7 @@ export const Section = styled("section")`
     justify-content: center;
     padding: 14%;
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         gap: 0.5rem;
         margin: unset;
         margin-top: -5%;

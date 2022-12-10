@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ListSection = styled("section")`
     padding: 0rem;
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         padding: unset;
     }
 `;
@@ -21,7 +21,7 @@ export const Hr = styled("hr")`
     padding-right: 0.25rem;
     color: hsl(231, 11%, 63%);
 
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 768px) {
         margin-block: 1rem;
     }
 `;
