@@ -40,15 +40,15 @@ export const SubTitle = styled("p")`
 `;
 
 export const P = styled("p")`
-    margin-block: 0.5rem;
-    line-height: 2.2rem;
+    line-height: ${(props) => (props.lh ? props.lh : "2.2rem")};
+    margin-block: ${(props) => (props.my ? props.my : "0.5rem")};
     text-align: ${(props) => (props.align ? props.align : "left")};
     font-weight: ${(props) => (props.weight ? props.weight : "700")};
     font-size: ${(props) => (props.size ? props.size : "1.3rem")};
     color: ${(props) => (props.color ? props.color : "hsl(231, 11%, 63%)")};
 
     @media screen and (max-width: 625px) {
-        line-height: 1.4rem;
+        line-height: ${(props) => (props.sm_lh ? props.sm_lh : "1.4rem")};
         font-size: ${(props) => (props.sm_size ? props.sm_size : "0.9rem")};
     }
 `;

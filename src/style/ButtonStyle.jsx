@@ -5,11 +5,11 @@ export const Button = styled("button")`
     outline: none;
     cursor: pointer;
     font-weight: 700;
-    font-size: 1.2rem;
-    border-radius: 0.6rem;
+    border-radius: 0.4rem;
     padding: 0.8rem 1.4rem;
 
-    margin-left: ${(props) => (props.toRight ? "83.2%" : 0)};
+    margin-left: ${(props) => (props.toRight ? "80%" : 0)};
+    font-size: ${(props) => (props.fSize ? props.fSize : "1.2rem")};
 
     color: ${(props) => {
         if (props.type === "primary") {
@@ -38,9 +38,9 @@ export const Button = styled("button")`
 
         background-color: ${(props) => {
             if (props.type === "primary") {
-                return "hsla(213, 96%, 18%, 0.7)";
+                return "hsla(213, 96%, 18%, 0.8)";
             } else if (props.type === "secondary") {
-                return "hsla(243, 100%, 62%, 0.7)";
+                return "hsla(243, 100%, 62%, 0.8)";
             }
             return "hsl(0, 0%, 100%)";
         }};

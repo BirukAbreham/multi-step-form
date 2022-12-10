@@ -3,7 +3,7 @@ import mbImgSidebar from "../assets/images/bg-sidebar-mobile.svg";
 import dkImgSidebar from "../assets/images/bg-sidebar-desktop.svg";
 
 export const Wrapper = styled("div")`
-    padding: 4% 8%;
+    padding: 6% 12%;
     min-height: 100vh;
     background: hsl(217, 100%, 97%);
 

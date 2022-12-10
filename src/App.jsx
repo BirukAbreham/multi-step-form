@@ -23,14 +23,18 @@ import {
 import arcadeImg from "./assets/images/icon-arcade.svg";
 import advancedImg from "./assets/images/icon-advanced.svg";
 import proImg from "./assets/images/icon-pro.svg";
+import { EMAIL_REGEX, PHONE_REGEX } from "./components/Util";
 
 function App() {
     const [formStep, setFormStep] = useState(1);
 
     const [formData, setFormData] = useState({
         name: "",
+        nameError: "",
         email: "",
+        emailError: "",
         phone: "",
+        phoneError: "",
         isYearlyPlan: false,
         plan: {
             title: "Arcade",
@@ -145,7 +149,62 @@ function App() {
     }
 
     function nextStep() {
-        setFormStep((prevState) => prevState + 1);
+        if (formStep === 1) {
+            if (!formData.name) {
+                setFormData((prevState) => ({
+                    ...prevState,
+                    nameError: "This field is required",
+                }));
+            }
+
+            if (!formData.email) {
+                setFormData((prevState) => ({
+                    ...prevState,
+                    emailError: "This field is required",
+                }));
+            }
+
+            if (!formData.phone) {
+                setFormData((prevState) => ({
+                    ...prevState,
+                    phoneError: "This field is required",
+                }));
+            }
+
+            let IsValidEmail = EMAIL_REGEX.test(formData.email);
+            if (formData.email && !IsValidEmail) {
+                setFormData((prevState) => ({
+                    ...prevState,
+                    emailError: "This email is invalid",
+                }));
+            }
+
+            let IsValidPhone = PHONE_REGEX.test(formData.phone);
+            if (formData.phone && !IsValidPhone) {
+                setFormData((prevState) => ({
+                    ...prevState,
+                    phoneError: "This phone is invalid",
+                }));
+            }
+
+            if (
+                formData.name &&
+                formData.email &&
+                formData.phone &&
+                IsValidEmail &&
+                IsValidPhone
+            ) {
+                setFormData((prevState) => ({
+                    ...prevState,
+                    nameError: "",
+                    emailError: "",
+                    phoneError: "",
+                }));
+                setFormStep((prevState) => prevState + 1);
+            }
+        } else {
+            setFormStep((prevState) => prevState + 1);
+        }
     }
 
     function confirm() {
@@ -328,6 +387,7 @@ function App() {
                             ) : null}
                             {formStep < 4 ? (
                                 <Button
+                                    fSize="1rem"
                                     type="primary"
                                     toRight={formStep === 1}
                                     onClick={nextStep}
@@ -336,7 +396,11 @@ function App() {
                                 </Button>
                             ) : null}
                             {formStep === 4 ? (
-                                <Button type="secondary" onClick={confirm}>
+                                <Button
+                                    fSize="1rem"
+                                    type="secondary"
+                                    onClick={confirm}
+                                >
                                     Confirm
                                 </Button>
                             ) : null}

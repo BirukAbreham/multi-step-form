@@ -10,9 +10,22 @@ export const InputWrapper = styled("div")`
     justify-content: flex-start;
 `;
 
+export const LabelWrapper = styled("div")`
+    width: 100%;
+    display: flex;
+    padding: unset;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`
+
 export const Label = styled("label")`
     font-size: 1.2rem;
     color: hsl(213, 96%, 18%);
+
+    @media screen and (max-width: 625px) {
+        font-size: 1rem;
+    }
 `;
 
 export const Input = styled("input")`
@@ -20,7 +33,10 @@ export const Input = styled("input")`
     outline: none;
     border-radius: 0.5rem;
     padding: 0.8rem 1.3rem;
-    border: 1px solid hsl(229, 24%, 87%);
+    border: ${(props) =>
+        props.danger
+            ? "1px solid hsl(354, 84%, 57%)"
+            : "1px solid hsl(229, 24%, 87%)"};
 
     &:focus,
     &:hover {
